@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+</head>
+
+<body>
+
+<h1>Edit Student</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    Name:
+    <input type="text" name="name" value="{{student.name}}">
+
+    <br><br>
+
+    Roll No:
+    <input type="text" name="roll_no" value="{{student.roll_no}}">
+
+    <br><br>
+
+    <button type="submit">
+        Update
+    </button>
+
+</form>
+
+</body>
+</html>

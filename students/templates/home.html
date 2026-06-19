@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Portal</title>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<h1>Student Portal</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Add Student
+    </button>
+
+</form>
+
+<hr>
+
+{% for student in students %}
+
+<p>
+
+{{ student.name }}
+
+-
+
+{{ student.roll_no }}
+<a href="/edit/{{student.id}}/">Edit</a>
+<a href="/delete/{{student.id}}">
+
+Delete
+
+</a>
+
+</p>
+
+{% endfor %}
+
+</body>
+
+</html>
